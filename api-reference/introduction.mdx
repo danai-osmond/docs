@@ -1,33 +1,38 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "Introduction"
+description: "The Reboxed Merchant API provides resources for merchants to manage their products, pricing, inventory and orders. This documentation outlines the available endpoints and how to interact with them."
 ---
 
 <Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
+  Reboxed merchants can integrate directly or through Linnworks. Looking for access to our API? Reach out for more information.
 </Note>
-
-## Welcome
-
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
-
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
 
 ## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+All API requests require authentication using an API Key.
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+You must use a valid API Key to send requests to the API endpoints. To obtain an API key, please contact the Reboxed team directly.
+
+## Important Notes
+
+- The API only supports HTTPS communications
+- Any HTTP requests will receive a 301 redirect to the corresponding HTTPS resource
+- Responses are returned in JSON format
+- Error responses include an `error` key in the JSON response
+
+## Resources
+
+<CardGroup cols={2}>
+  <Card title="Products" icon="mobile-notch" iconType="regular" color="#591091">
+    Retreive information about your mapped SKUs
+  </Card>
+  <Card title="Pricing" icon="circle-dollar" iconType="regular" color="#591091">
+    Update pricing for a specific SKU, using the Reboxed ID
+  </Card>
+  <Card title="Inventory" icon="warehouse-full" iconType="regular" color="#591091" cta="Update inventory quantities for specific SKUs">
+    Update inventory for  a specific SKU , using the Reboxed ID
+  </Card>
+  <Card title="Orders" icon="bag-shopping" iconType="regular" color="#591091">
+    Retrieve information about orders and update fulfilments
+  </Card>
+</CardGroup>
